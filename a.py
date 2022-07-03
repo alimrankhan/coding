@@ -1,12 +1,11 @@
-k= int(input())
-
-if k>=60:
-	if (k-60)>9:
-		print(f"22:{k-60}")
-	else:
-		print(f"22:0{k-60}")
-else:
-	if(k>9):
-		print(f"21:{k}")
-	else:
-		print(f"21:0{k}")
+class a:
+	def b(self,q):
+		print(1)
+	
+	def c(self,p):
+		print(2)
+		self.b(2)
+		
+obj= a()
+obj.b(2)
+obj.c(4)
