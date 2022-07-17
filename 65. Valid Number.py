@@ -25,7 +25,7 @@ def isInt( s):
 		return False
 	if (s[0]== '+' or s[0] == '-'):
 		s= s[1:len(s)]
-	if ('+' in s) or ('-' in s):
+	if ('+' in s) or ('-' in s) or (s==''):
 		return False
 	for ch in s:
 		if ch not in '0987654321':
@@ -61,8 +61,10 @@ def isDec(s):
 	return True
 print(isDec('-1.'), isInt('-1.'),)
 print(isDec('-.1'), isInt('-.1'),)
-print(isDec('-.1'), isInt('1'),)
+print(isDec('-.1.'), isInt('1'),)
+print(isDec('1.'), isInt('1'),)
 
 inp= ["2", "0089", "-0.1", "+3.14", "4.", "-.9", "2e10", "-90E3", "3e+7", "+6e-1", "53.5e93", "-123.456e789","abc", "1a", "1e", "e3", "99e2.5", "--6", "-+3", "95a54e53"]
 for i in inp:
 	print(isNumber(i))
+print(isNumber('4e+'))
