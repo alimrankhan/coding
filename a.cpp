@@ -1,33 +1,35 @@
-//triple_sum //hackerrank
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> //template //test
 using namespace std;
+#define ll long long
+int num[100];
+int used[100];
+void test();
+int main()
+{	test();	return 0;	}
 
-int main() {
-    int a,b,c;
-    int ans=0;
-    cin>>a>>b>>c;
-    int ara[a], arb[b], arc[c];
-    for(int i= 0;i< a;i++)
-        cin>>ara[i];
-    for(int i=0; i<b; i++)
-        cin>>arb[i];
-    for(int i=0; i<c; i++)
-        cin>>arc[i];
-    for(int i=0; i<b; i++){
-        if(i>0 && arb[i]==arb[i-1])
-            continue;
-        int sa=0,sc=0;
-        for(int j=0;j<a;j++){
-            if(ara[j]<=arb[i])
-                sa++;
-        }
-        for(int k=0;k<c;k++){
-            if(arc[k]<=arb[i])
-                sc++;
-        }
-        ans+= (sa*sc);
-    }
-    cout<<ans<<endl;
+void permutation(int n, int at){
+	if(at== n+1){
+		for(int i=1;i<=n;i++){
+			cout<<num[i];
+		}
+		cout<<endl;
+	}
+	else{
+		for(int i=1;i<=n;i++){
+			if(!used[i]){
+				used[i]=1;
+				num[at]=i;
+				permutation(n,  at+1);
+				used[i]=0;
+			}
+		}
+	}
 
-    return 0;
+}
+void test(){
+	int n;
+	cin>>n;
+	for(int i=0;i<=n;i++) used[i]=0;
+	permutation(n, 1);
+
 }
