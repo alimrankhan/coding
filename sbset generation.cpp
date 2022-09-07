@@ -7,7 +7,8 @@ int n=3;
 void fun(int k){
     if(k==(n+1)){
 for(auto i:sub_arr){
-cout<<i<<endl;}
+cout<<i;}
+cout<<endl;
 
     }
     else{
