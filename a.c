@@ -1,8 +1,14 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-    printf("hello world\n");
-    printf("from codeblocks");
-
-    return 0;
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d", &t);
+	while(t--){
+	    int n,k;
+	    scanf("%d %d", &n, &k);
+	    printf("%d\n", n%k);
+	}
+	return 0;
 }
+
