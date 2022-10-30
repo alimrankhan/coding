@@ -1,35 +1,11 @@
-#Two Sets #https://cses.fi/problemset/task/1092
-
-n= int(input())
-nsum= int((n*(n+1))/2)
-if(nsum&1):
-    print('NO')
-else:
-    print('YES')
-    need_sum= int(nsum/2)
-    each_sum= 0
-    ans=[]
-    for l in range(1,int((n+1)/2+1)):
-        r= n-l+1
-        # print(l,r)
-        if each_sum== need_sum:
-            break
-        elif each_sum+l == need_sum:
-            ans.append(l)
-            each_sum+=l
-        elif each_sum+r == need_sum:
-            ans.append(r)
-            each_sum+=r
-        else:
-            ans.append(l)
-            ans.append(r)
-            each_sum+= l+r 
-    print(len(ans))
-    for i in ans:
-        print(i, end= ' ')
-    print()
-    print(n-len(ans))
-    for i in range(1,n+1):
-        if i not in ans:
-            print(i,end=' ')
-    print()
+#codewars #maximum subarray
+#max_sequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+# should be 6: [4, -1, 2, 1]
+arr= [1,-2,3]
+ans= 0
+best= 0
+for i in range(len(arr)):
+    best= max(arr[i], best+arr[i])
+    ans= max(best, ans)
+    print(best,ans)
+print(ans)
