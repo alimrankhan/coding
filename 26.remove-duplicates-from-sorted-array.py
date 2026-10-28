@@ -3,15 +3,24 @@
 #
 # [26] Remove Duplicates from Sorted Array
 #
-# @lc code=end
-# @lc code=end
-# @lc code=end
-#  nums = [1,1,2]Output: 2, nums = [1,2,_]
+
 # @lc code=start
 class Solution:
     def removeDuplicates(self, nums: list[int]) -> int:
-        nums= list(set(nums)) 
-        return len(nums)
+        k= len(set(nums))
+        le= len(nums)
+        idx= 0
+        curr= nums[0]
+        for pos in range(0,le):
+            if nums[pos]==curr:
+                continue
+            idx= idx+1
+            nums[idx]= nums[pos]
+            curr= nums[pos]
 
+
+        return k
+        
 # @lc code=end
-
+li= [1,2,2,2,3,3,4,5,5]
+print(Solution().removeDuplicates(li), li)  # Output: 5
